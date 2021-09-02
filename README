@@ -1,0 +1,57 @@
+Financial Simulation Program
+Will Rodman - wrodman@tulane.edu
+--------------------------------
+
+Summery:
+This program allows a user to model the assets and investments of an individual
+who is either financially literate or financially illiterate thoughout their
+career. Specifically, the program simulates decisions involving savings accounts,
+mortgage/debt payments and rent over 40 years, then models an individuals based
+on either financially intelligent or unintelligent decisions.
+
+Prerequisites:
+Requires operating system that can run C language.
+
+Instructions:
+To use the program, the user runs FinancialSimulation in
+terminal followed by two command line arguments. The first and second command
+line arguments specify the names of the files data will be outputted for
+financially literate and illiterate simulations, respectively.
+
+Submission % ./FinancialSimulation output_fl.txt output_nfl.txt
+
+After running FinancialSimulation, the program will finish by writing data to
+the respective files from the command line. Each file will contain a
+newline of the individuals wealth for each year of the simulation.
+
+If the user wants more detailed outputs of the simulation. The user can
+enter a third and forth command line argument to specify the names for
+detailed data files for financially literate and illiterate simulations, respectively.
+
+./FinancialSimulation output_fl.txt output_nfl.txt output_fl_level_II.txt output_nfl_level_II.txt
+
+The detailed data files will output information about the simulation in the following 
+format for all simulation years.
+
+Financial literate person - Simulation year 1
+___________________________________________________________________________________
+Years with debt: 0   |   Years rented: 0   |   Owns House: No
+___________________________________________________________________________________
+ACCOUNT             ASSET                DEBT                 EXONERATED DEBT
+___________________________________________________________________________________
+Savings             |         5000.000001|                    |
+Checking            |            0.000000|                    |
+Loans               |                    |        52500.000000|
+Mortgage            |                    |            0.000000|
+Debt Paid           |                    |                    |            0.000000
+___________________________________________________________________________________
+___________________________________________________________________________________
+TOTAL               |         5000.000001|        52500.000000|            0.000000
+
+Developer:
+FinancialSimulation.c is the main script of the program and contains int main(),
+it also includes the simulation functions and all supporting functions.
+FinancialSimulation.h is the header file of FinancialSimulation.c, it defines
+all functions used along with the memory structure used during simulations.
+TestFinancialSimulation.c tests individual functions used my int main(), this
+includes void debt(), void house(), and int *simulate().
